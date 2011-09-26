@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+ARG=$1
+if [ $ARG = "setup" ]
+then
+    sudo modprobe vboxdrv;
+    sudo modprobe vboxnetadp;
+    sudo modprobe vboxnetflt;
+elif [ $ARG = "stop" ]
+then
+    sudo modprobe -r vboxdrv;
+    sudo modprobe -r vboxnetadp;
+    sudo modprobe -r vboxnetflt;
+else
+    echo 'Please use args "setup" or "stop".';
+fi

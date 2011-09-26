@@ -1,0 +1,5 @@
+x11-base/xorg-server udev
+gnome-base/gnome-session branding
+mail-client/mutt imap smtp
+net-misc/networkmanager dhcpcd resolvconf
+dev-python/PyQt4 X dbus opengl svg assistant multimedia phonon sql webkit

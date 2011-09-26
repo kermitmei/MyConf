@@ -1,0 +1,43 @@
+set editor="emacs -nw"
+set sendmail="/usr/bin/msmtp"
+
+set from = "mymail@gmail.com"
+set realname = "Kermit"
+
+set imap_user = "mymail@gmail.com"
+set imap_pass = "xxxxxxxxxx"
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed ="+[Gmail]/Drafts"
+#set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
+
+set include
+set header=no
+set indent_str="> "
+
+set header_cache =~/.maildir/cache/headers
+set message_cachedir =~/.maildir/cache/bodies
+set certificate_file =~/.maildir/certificates
+
+#set smtp_url = "smtp://yourusername@smtp.gmail.com:587/"
+#set smtp_pass = "yourpassword"
+
+set sort=reverse-date
+
+bind editor <space> noop
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+
+set move = no  #Stop asking to "move read messages to mbox"!
+set imap_keepalive = 900
+
+set alias_file=~/.maildir/alias #where I keep my aliases
+source $alias_file
+
+auto_view text/html
+
+set ascii_chars=yes
+set assumed_charset="utf-8:gb2312:gb18030:gbk:big5"
